@@ -577,7 +577,7 @@ server.tool(
   }
 );
 
-server.tool("runNextJSAudit", {}, async () => ({
+server.tool("runNextJSAudit", "Checks for best practices and SEO improvements for NextJS applications" {}, async () => ({
   content: [
     {
       type: "text",
