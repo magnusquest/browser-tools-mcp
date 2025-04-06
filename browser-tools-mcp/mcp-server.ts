@@ -1346,7 +1346,7 @@ server.tool('runBestPracticesAudit', 'Run a best practices audit on the current 
 server.tool('getActiveURL', 'Retrieve the active URL from the browser', async () => {
 	return await withServerConnection(async () => {
 		try {
-			const response = await fetch(`http://${discoveredHost}:${discoveredPort}/active-url`);
+			const response = await fetch(`http://${discoveredHost}:${discoveredPort}/get-active-urls`);
 			const json = await response.json();
 
 			if (response.ok) {
@@ -1354,7 +1354,7 @@ server.tool('getActiveURL', 'Retrieve the active URL from the browser', async ()
 					content: [
 						{
 							type: 'text',
-							text: `Active URL: ${json.url}`,
+							text: `Active URL: ${json.activeUrl}`,
 						},
 					],
 				};
